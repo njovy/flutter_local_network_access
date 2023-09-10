@@ -1,15 +1,15 @@
 # local_network
 
-A new Flutter project.
+A Flutter plugin for checking local network access permissions on iOS devices.
+
+## Features
+- Provides an interface to check if a user has granted local network access on an iOS device.
 
 ## Getting Started
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+### Installation
+Add `local_network` to your package's `pubspec.yaml` file:
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
+```yaml
+dependencies:
+  local_network: latest_version

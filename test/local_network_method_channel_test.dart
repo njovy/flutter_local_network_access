@@ -6,13 +6,13 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   MethodChannelLocalNetwork platform = MethodChannelLocalNetwork();
-  const MethodChannel channel = MethodChannel('local_network');
+  const MethodChannel channel = MethodChannel('com.njovy.libs/local_network');
 
   setUp(() {
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(
       channel,
       (MethodCall methodCall) async {
-        return '42';
+        return true;
       },
     );
   });
@@ -22,6 +22,6 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    expect(await platform.getPlatformVersion(), '42');
+    expect(await platform.checkLocalNetworkAccess(), true);
   });
 }

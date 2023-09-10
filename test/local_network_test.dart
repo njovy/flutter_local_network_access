@@ -9,7 +9,7 @@ class MockLocalNetworkPlatform
     implements LocalNetworkPlatform {
 
   @override
-  Future<String?> getPlatformVersion() => Future.value('42');
+  Future<bool> checkLocalNetworkAccess() => Future.value(true);
 }
 
 void main() {
@@ -19,11 +19,11 @@ void main() {
     expect(initialPlatform, isInstanceOf<MethodChannelLocalNetwork>());
   });
 
-  test('getPlatformVersion', () async {
+  test('checkLocalNetworkAccess', () async {
     LocalNetwork localNetworkPlugin = LocalNetwork();
     MockLocalNetworkPlatform fakePlatform = MockLocalNetworkPlatform();
     LocalNetworkPlatform.instance = fakePlatform;
 
-    expect(await localNetworkPlugin.getPlatformVersion(), '42');
+    expect(await localNetworkPlugin.checkLocalNetworkAccess(), true);
   });
 }
