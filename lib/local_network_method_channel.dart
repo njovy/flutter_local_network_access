@@ -10,7 +10,7 @@ class MethodChannelLocalNetwork extends LocalNetworkPlatform {
   final methodChannel = const MethodChannel('com.njovy.libs/local_network');
 
   @override
-  Future<bool> checkLocalNetworkAccess() {
-    return methodChannel.invokeMethod<bool>('checkLocalNetworkAccess').then((value) => value ?? false);
+  Future<bool> checkLocalNetworkAccess({double timeout = 1.0}) {
+    return methodChannel.invokeMethod<bool>('checkLocalNetworkAccess', timeout).then((value) => value ?? false);
   }
 }

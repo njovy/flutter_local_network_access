@@ -24,7 +24,7 @@ abstract class LocalNetworkPlatform extends PlatformInterface {
   }
 
 
-  Future<bool> checkLocalNetworkAccess() {
+  Future<bool> checkLocalNetworkAccess({double timeout = 2.0}) {
     throw UnimplementedError('checkLocalNetworkAccess() has not been implemented.');
   }
 }

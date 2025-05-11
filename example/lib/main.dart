@@ -29,7 +29,8 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    _localNetworkPlugin.checkLocalNetworkAccess().then((value) {
+    _localNetworkPlugin.checkLocalNetworkAccess(timeout: 2).then((value) {
+      print("result=$value");
       setState(() {
         _localNetworkAccess = value;
       });
@@ -48,7 +49,9 @@ class _MyAppState extends State<MyApp> {
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.check),
-          onPressed: () {},
+          onPressed: () {
+            initPlatformState();
+          },
         ),
       ),
     );

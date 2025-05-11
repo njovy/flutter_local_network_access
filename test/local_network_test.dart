@@ -9,7 +9,7 @@ class MockLocalNetworkPlatform
     implements LocalNetworkPlatform {
 
   @override
-  Future<bool> checkLocalNetworkAccess() => Future.value(true);
+  Future<bool> checkLocalNetworkAccess({double timeout = 2.0}) => Future.value(true);
 }
 
 void main() {
